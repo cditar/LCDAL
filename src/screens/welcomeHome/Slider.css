@@ -1,0 +1,4 @@
+.slick-track {
+    background-color: red !important;
+    transform: translate3d(0px, 0px, 0px) !important;
+}

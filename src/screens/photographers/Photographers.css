@@ -1,0 +1,39 @@
+.photographersContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.dataContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33.4vw;
+    height: 100vh;
+    filter: grayscale(100%);
+    color: white;
+    font-size: 50px;
+    font-weight: 100;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    0% { filter: grayscale(100%); }
+    100% { filter: grayscale(0%); }
+  }
+
+.dataContainer:hover {
+    filter: grayscale(0%);
+    font-weight: 700;
+    cursor: pointer;
+    animation: fadeIn 0.8s;
+}
+
+.image {
+    z-index: -999;
+    position: absolute;
+    width: 33.4vw;
+    height: 100vh;
+}

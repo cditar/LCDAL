@@ -1,0 +1,30 @@
+.contactContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.rightContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.centerContainer {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: -75px;
+}
