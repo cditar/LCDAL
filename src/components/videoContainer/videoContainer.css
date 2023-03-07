@@ -1,0 +1,26 @@
+.videoInfoContainer {
+    margin-top: 120px;
+    text-align: center;
+    height: 0% !important;
+}
+
+.videoInfoContainer:hover {
+    cursor: pointer;
+}
+
+.videoTitle {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -5;
+}
+
+.videoArtist {
+    color: white;
+    margin-top: -5px;
+}
+
+.videoDirector {
+    margin-top: 15px;
+    color: white;
+}

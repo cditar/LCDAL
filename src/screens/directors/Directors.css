@@ -1,0 +1,54 @@
+.directorsName {
+    letter-spacing: -1;
+    font-size: 50px;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    transition-duration: 0.5s;
+    font-family: 'Praktika-Light';
+    font-weight: 500;
+}
+
+.directorsName:hover {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+.directorsRowContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+}
+
+.columnLeftContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 45vw;
+    top: 24vh;
+    left: 0;
+    text-align: right;
+    position: absolute;
+}
+
+.columnRightContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 45vw;
+    top: 24vh;
+    position: absolute;
+    right: 0;
+}
+
+.videoBackground {
+    position: absolute;
+    z-index: -999;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+}

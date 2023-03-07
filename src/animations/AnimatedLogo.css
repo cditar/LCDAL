@@ -1,0 +1,15 @@
+.container {
+    display: 'flex';
+    font-size: '110px';
+}
+
+.container:hover {
+    display: 'flex';
+    font-size: '130px';
+}
+
+.font {
+    margin-left: 10;
+    margin-right: 10;
+    font-family: 'Raccosetta';
+}

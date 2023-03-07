@@ -1,0 +1,80 @@
+.worksContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+}
+
+
+.dataWorksContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    filter: grayscale(100%);
+    margin-left: 150px;
+    position: absolute;
+    z-index: 999;
+}
+
+.works-videoContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+}
+
+.worksName {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 75px;
+    text-align: left;
+    margin-top: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Praktika-Light';
+    transition-duration: 0.5s;
+    color: black;
+}
+
+.worksName:hover {
+    color: white;
+    margin-top: 25px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: 10px;
+}
+
+@keyframes colorTransition {
+    0% {
+        filter: grayscale(100%);
+    }
+
+    100% {
+        filter: grayscale(0%);
+    }
+}
+
+.worksBackground {
+    z-index: -999;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.privacy-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: #CC5430; */
+    /* background-color: #2F2B5E; */
+    background-color: black;
+    z-index: 2;
+  }
