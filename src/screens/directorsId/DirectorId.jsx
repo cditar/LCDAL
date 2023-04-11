@@ -11,6 +11,7 @@ export const DirectorId = () => {
     const [showContent, setShowContent] = useState(false);
     const [separatedVideos, setSeparatedVideos] = useState([]);
     const location = useLocation();
+    console.log(separatedVideos);
     const { name, id } = location.state;
     const { getVideosByDirector } = useContext(FirebaseContext);
     const [videos, setVideos] = useState([]);
@@ -28,18 +29,12 @@ export const DirectorId = () => {
     }, [videos]);
 
     useEffect(() => {
-        if(!videos.length){
+        if (!videos.length) {
             const gettedVideos = getVideosByDirector(id);
             setVideos(gettedVideos);
         }
         if (videos.length && !separatedVideos.length) {
-            if (videos.length < 3) {
-                let finalVideosArray = [];
-                videos.map((video) => finalVideosArray.push(video));
-                setSeparatedVideos(finalVideosArray)
-            } else {
-                randSplit(2, 3);
-            }
+            randSplit(2, 3);
         }
         setTimeout(() => setShowContent(true), 2000);
     }, [videos.length, name, getVideosByDirector]);
@@ -60,18 +55,14 @@ export const DirectorId = () => {
                     :
                     <div className='generalContainer'>
                         {separatedVideos.length &&
-                            separatedVideos.length < 3 ?
-                                separatedVideos.map((item) => (
-                                    <VideoContainer key={item.name} title={item.name} name={name} src={item.url} image={item.image} imageAlt={name + 'alt'} />
-                                )) :
-                                separatedVideos.map((item) => (
-                                    <div className='rowContainer'>
-                                        {
-                                            item.map((video) =>
-                                                <VideoContainer key={video.name} title={video.name} name={name} src={video.url} image={video.image} imageAlt={name + 'alt'} />
-                                            )
-                                        }
-                                    </div>))
+                            separatedVideos.map((item) => (
+                                <div className='rowContainer'>
+                                    {
+                                        item.map((video) =>
+                                            <VideoContainer key={video.name} title={video.name} name={name} src={video.url} image={video.image} imageAlt={name} />
+                                        )
+                                    }
+                                </div>))
                         }
                     </div>
             }
