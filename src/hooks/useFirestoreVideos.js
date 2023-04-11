@@ -22,7 +22,6 @@ export const useFirestoreVideos = (name) => {
         querySnapshot.forEach((doc) => {
             const response = doc.data();
             const isTheDirector = response.director.filter((item) => item === name);
-            console.log("isTheDirector: ", isTheDirector);
             if (isTheDirector.length) {
                 data.push(doc.data());
             }

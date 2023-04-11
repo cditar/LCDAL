@@ -13,6 +13,11 @@ export const WelcomeHome = () => {
     const isPresent = useIsPresent();
     const navigate = useNavigate();
 
+// TODO:
+// Logo a svg para mantener el mismo efect pero con la tipografía original
+// color blanco
+// probar fade / guardar el que está ahora también
+
     return (
         <Grid className='container' onClick={() => navigate('/works')}>
                     <HoverVideoPlayer

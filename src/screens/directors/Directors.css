@@ -52,3 +52,15 @@
     left: 0;
     width: 100vw !important;
 }
+
+.directorsTransition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #CC5430;
+    /* background-color: #2F2B5E; */
+    /* background-color: black; */
+    z-index: 2;
+  }

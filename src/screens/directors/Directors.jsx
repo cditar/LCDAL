@@ -135,9 +135,9 @@ export const Directors = () => {
       </AnimatePresence >
       <motion.div
                 initial={{ scaleX: 2 }}
-                animate={{ scaleX: 0, transition: { duration:1, ease: "circOut" } }}
+                animate={{ scaleX: 0, transition: { duration: 1, ease: "circOut" } }}
                 style={{ originX: isPresent ? 0 : 2 }}
-                className="privacy-screen"
+                className="directorsTransition"
             />
     </>
   );

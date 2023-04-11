@@ -13,6 +13,8 @@ export const Photographers = () => {
     const [showCommercialsBckg, setShowCommercialsBckg] = useState(false);
     const isPresent = useIsPresent();
 
+    // Animación de transicion igual que works
+    // TODO: Agregar la imágen en el pausedOverlay
     return (
         <>
             <Menu color={showMusicBckg || showFilmsBckg || showCommercialsBckg ? 'white' : 'black'} />
@@ -31,17 +33,40 @@ export const Photographers = () => {
                     {showCommercialsBckg && <img style={{ objectFit: 'cover' }} alt='commercials' src={COMMERCIALS} className='worksBackground' />}
 
                     <div className='dataWorksContainer'>
-                        <NavLink to={`/photographers/lola`} className='worksName' onMouseLeave={() => setShowMusicBckg(false)} onMouseOver={() => setShowMusicBckg(true)}> ANA PIÑERO </NavLink>
-                        <NavLink to={`/photographers/malu`} className='worksName' onMouseLeave={() => setShowFilmsBckg(false)} onMouseOver={() => setShowFilmsBckg(true)}> MALU BORUCHOWICZ </NavLink>
-                        <NavLink to={`/photographers/lola`} className='worksName' onMouseLeave={() => setShowCommercialsBckg(false)} onMouseOver={() => setShowCommercialsBckg(true)}> LOLA PIÑERO </NavLink>
+                        <motion.div
+                            key='music'
+                            initial={{ x: "130%" }}
+                            animate={{ x: "0%" }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <NavLink to={`/photographers/lola`} className='worksName' onMouseLeave={() => setShowMusicBckg(false)} onMouseOver={() => setShowMusicBckg(true)}> ANA PIÑERO </NavLink>
+                        </motion.div>
+
+                        <motion.div
+                            key='films'
+                            initial={{ x: "100%" }}
+                            animate={{ x: "0%" }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <NavLink to={`/photographers/malu`} className='worksName' onMouseLeave={() => setShowFilmsBckg(false)} onMouseOver={() => setShowFilmsBckg(true)}> MALU BORUCHOWICZ </NavLink>
+                        </motion.div>
+
+                        <motion.div
+                            key='films'
+                            initial={{ x: "180%" }}
+                            animate={{ x: "0%" }}
+                            transition={{ duration: 1 }}
+                        >
+                            <NavLink to={`/photographers/lola`} className='worksName' onMouseLeave={() => setShowCommercialsBckg(false)} onMouseOver={() => setShowCommercialsBckg(true)}> LOLA PIÑERO </NavLink>
+                        </motion.div>
                     </div>
                 </motion.div>
             </AnimatePresence>
             <motion.div
                 initial={{ scaleX: 2 }}
-                animate={{ scaleX: 0, transition: { duration: 1, ease: "circOut" } }}
+                animate={{ scaleX: 0, transition: { duration: 0.8, ease: "circOut" } }}
                 style={{ originX: isPresent ? 0 : 2 }}
-                className="privacy-screen"
+                className="photographersTransition"
             />
         </>
     )

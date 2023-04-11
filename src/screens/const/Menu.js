@@ -10,7 +10,7 @@ export const whiteMenu = [
     },
     {
         id: 'directores',
-        name: 'Directores',
+        name: 'Directorxs',
         image: '',
         to: '/directors'
     },
@@ -42,7 +42,7 @@ export const blackMenu = [
     },
     {
         id: 'directores',
-        name: 'Directores',
+        name: 'Directorxs',
         to: '/directors'
     },
     {

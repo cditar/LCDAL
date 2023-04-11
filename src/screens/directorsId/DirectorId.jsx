@@ -29,7 +29,13 @@ export const DirectorId = () => {
 
     useEffect(() => {
         if (videos.length && !separatedVideos.length) {
-            randSplit(2, 3);
+            if (videos.length < 3) {
+                let finalVideosArray = [];
+                videos.map((video) => finalVideosArray.push(video));
+                setSeparatedVideos(finalVideosArray)
+            } else {
+                randSplit(2, 3);
+            }
         }
         setTimeout(() => setShowContent(true), 2000);
     }, [randSplit, separatedVideos, videos]);
@@ -50,15 +56,19 @@ export const DirectorId = () => {
                     :
                     <div className='generalContainer'>
                         {separatedVideos.length &&
-                            separatedVideos.map((item) =>
-                                <div className='rowContainer'>
-                                    {
-                                        item.map((video) =>
-                                        
-                                            <VideoContainer key={video.name} title={video.name} name={name} src={video.url} />
-                                        )
-                                    }
-                                </div>)}
+                            separatedVideos.length < 3 ?
+                                separatedVideos.map((item) => (
+                                    <VideoContainer key={item.name} title={item.name} name={name} src={item.url} image={item.image} imageAlt={name + 'alt'} />
+                                )) :
+                                separatedVideos.map((item) => (
+                                    <div className='rowContainer'>
+                                        {
+                                            item.map((video) =>
+                                                <VideoContainer key={video.name} title={video.name} name={name} src={video.url} image={video.image} imageAlt={name + 'alt'} />
+                                            )
+                                        }
+                                    </div>))
+                        }
                     </div>
             }
             <div className="stickyDownbarDirectorId">

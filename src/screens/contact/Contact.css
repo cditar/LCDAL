@@ -34,3 +34,15 @@
     font-size: 18px;
     font-weight: 600;
 }
+
+.contactTransition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: #CC5430; */
+    /* background-color: #2F2B5E; */
+    background-color: black;
+    z-index: 2;
+  }

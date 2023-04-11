@@ -13,6 +13,8 @@ export const Works = () => {
     const { stills } = useFirestoreVideos();
     const isPresent = useIsPresent();
 
+    // TODO: 
+    // dejar en colores la transición
     return (
         <>
             <Menu color={showMusicBckg || showFilmsBckg || showCommercialsBckg ? 'white' : 'black'} />
@@ -21,12 +23,11 @@ export const Works = () => {
                 {showFilmsBckg && <HoverVideoPlayer videoSrc={stills[0]} focused={true} className='works-videoContainer' />}
                 {showCommercialsBckg && <HoverVideoPlayer videoSrc={stills[6]} focused={true} className='works-videoContainer' />}
                 <div className='dataWorksContainer'>
-                    <AnimatePresence>
                         <motion.div
                             key='music'
                             initial={{ x: "130%" }}
                             animate={{ x: "0%" }}
-                            transition={{ duration: 0.5 }}
+                            transition={{ duration: 0.6 }}
                         >
                             <NavLink
                                 onMouseOver={() => setShowMusicBckg(true)}
@@ -36,14 +37,12 @@ export const Works = () => {
                                 className="worksName"
                             > MUSIC VIDEOS </NavLink>
                         </motion.div>
-                    </AnimatePresence>
 
-                    <AnimatePresence>
                         <motion.div
                             key='films'
                             initial={{ x: "300%" }}
                             animate={{ x: "0%" }}
-                            transition={{ duration: 0.7 }}
+                            transition={{ duration: 0.8 }}
                         >
                             <NavLink
                                 onMouseOver={() => setShowFilmsBckg(true)}
@@ -53,9 +52,7 @@ export const Works = () => {
                                 className="worksName"
                             > FILMS </NavLink>
                         </motion.div>
-                    </AnimatePresence>
 
-                    <AnimatePresence>
                         <motion.div
                             key='films'
                             initial={{ x: "180%" }}
@@ -70,14 +67,13 @@ export const Works = () => {
                                 className="worksName"
                             > COMMERCIALS </NavLink>
                         </motion.div>
-                    </AnimatePresence>
                 </div>
             </div>
             <motion.div
                 initial={{ scaleX: 2 }}
-                animate={{ scaleX: 0, transition: { duration: 0.6, ease: "circOut" } }}
+                animate={{ scaleX: 0, transition: { duration: 0.8, ease: "circOut" } }}
                 style={{ originX: isPresent ? 0 : 2 }}
-                className="privacy-screen"
+                className="worksTransition"
             />
         </>
     )

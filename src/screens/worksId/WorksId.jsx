@@ -12,7 +12,7 @@ export const WorksId = () => {
     const [showContent, setShowContent] = useState(false);
     const [separatedVideos, setSeparatedVideos] = useState([]);
     const { videos } = useWorksVideos(name);
-
+    
     const randSplit = useCallback((min, max) => {
         if (min > videos.length || max <= min)
             return [videos];
@@ -23,7 +23,7 @@ export const WorksId = () => {
             i += rnd;
         }
         setSeparatedVideos(res);
-    }, [videos]);
+    }, [videos, separatedVideos]);
 
     useEffect(() => {
         if (videos.length && !separatedVideos.length) {
@@ -46,7 +46,9 @@ export const WorksId = () => {
                                 <div className='rowContainer'>
                                     {
                                         item.map((video) =>
-                                            <VideoContainer key={video.name} title={video.name} name={name} src={video.url} />
+                                        {
+                                            return <VideoContainer key={video.name} title={video.name} name={name} src={video.url} image={video.image} imageAlt={video.name}/>
+                                        }
                                         )
                                     }
                                 </div>)}
