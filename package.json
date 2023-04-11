@@ -1,7 +1,7 @@
 {
   "name": "lcdal",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://cditar.github.io/LCDAL/",
   "private": false,
   "dependencies": {
     "@emotion/react": "^11.10.5",
