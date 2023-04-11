@@ -3,7 +3,6 @@ import HoverVideoPlayer from 'react-hover-video-player';
 import './videoContainer.css'
 
 export const VideoContainer = ({ src, name, artist, title, image, imageAlt }) => {
-    console.log("Image: ", image);
 
     const openNewWindow = () => {
         window.open(src, 'popUpWindow');

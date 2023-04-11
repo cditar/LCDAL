@@ -5,7 +5,6 @@ import { getDocs, collection } from "firebase/firestore";
 
 export const useWorksVideos = (category) => {
     const [videos, setVideos] = useState([]);
-    console.log("Videos: ", videos);
     const getVideosByCategory = useCallback(async () => {
         let data = [];
         const querySnapshot = await getDocs(collection(projectFirestore, 'videos'));

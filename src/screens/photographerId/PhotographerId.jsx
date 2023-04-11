@@ -5,9 +5,9 @@ import { NavLink } from "react-router-dom";
 
 
 export const PhotographerId = () => {
-  const name = window.location.pathname.replace('/photographers/', '');
+  const name = window.location.hash.replace('#/photographers/', '');
   const { images } = useFirestoreImages(name);
-
+  console.log(images);
   return (
     <>
       {images.length === 0 ? (
