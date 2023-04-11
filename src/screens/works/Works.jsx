@@ -3,7 +3,7 @@ import './Works.css'
 import { NavLink } from 'react-router-dom';
 import { useFirestoreVideos } from '../../hooks/useFirestoreVideos';
 import HoverVideoPlayer from 'react-hover-video-player';
-import { AnimatePresence, motion, useIsPresent } from "framer-motion";
+import { motion, useIsPresent } from "framer-motion";
 import { Menu } from '../../components/menu/Menu';
 
 export const Works = () => {
