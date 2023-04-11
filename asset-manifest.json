@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/LCDAL/static/css/main.be142b0f.css",
-    "main.js": "/LCDAL/static/js/main.2f44c6a8.js",
+    "main.js": "/LCDAL/static/js/main.5683a428.js",
     "static/js/787.847d41f0.chunk.js": "/LCDAL/static/js/787.847d41f0.chunk.js",
     "static/media/works-commercials.jpg": "/LCDAL/static/media/works-commercials.dbf3534cb2cc0759f682.jpg",
     "static/media/LOGO_BLACK.png": "/LCDAL/static/media/LOGO_BLACK.c5fe9d49cc96a4185dd4.png",
@@ -12,11 +12,11 @@
     "static/media/Raccosetta.ttf": "/LCDAL/static/media/Raccosetta.c0f29776ce9ebc1f2726.ttf",
     "index.html": "/LCDAL/index.html",
     "main.be142b0f.css.map": "/LCDAL/static/css/main.be142b0f.css.map",
-    "main.2f44c6a8.js.map": "/LCDAL/static/js/main.2f44c6a8.js.map",
+    "main.5683a428.js.map": "/LCDAL/static/js/main.5683a428.js.map",
     "787.847d41f0.chunk.js.map": "/LCDAL/static/js/787.847d41f0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.be142b0f.css",
-    "static/js/main.2f44c6a8.js"
+    "static/js/main.5683a428.js"
   ]
 }
