@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/LCDAL/static/css/main.be142b0f.css",
+    "main.js": "/LCDAL/static/js/main.a9db3dc4.js",
+    "static/js/787.847d41f0.chunk.js": "/LCDAL/static/js/787.847d41f0.chunk.js",
+    "static/media/works-commercials.jpg": "/LCDAL/static/media/works-commercials.dbf3534cb2cc0759f682.jpg",
+    "static/media/LOGO_BLACK.png": "/LCDAL/static/media/LOGO_BLACK.c5fe9d49cc96a4185dd4.png",
+    "static/media/works-films.jpg": "/LCDAL/static/media/works-films.7d09932af2c61f2c517c.jpg",
+    "static/media/works-musicvideos.jpg": "/LCDAL/static/media/works-musicvideos.5260d43258dd5cf8c28e.jpg",
+    "static/media/Praktika-Light.otf": "/LCDAL/static/media/Praktika-Light.cff59afb29b4ccd7ec6f.otf",
+    "static/media/LOADING.png": "/LCDAL/static/media/LOADING.4f072d02879e66932e0b.png",
+    "static/media/Raccosetta.ttf": "/LCDAL/static/media/Raccosetta.c0f29776ce9ebc1f2726.ttf",
+    "index.html": "/LCDAL/index.html",
+    "main.be142b0f.css.map": "/LCDAL/static/css/main.be142b0f.css.map",
+    "main.a9db3dc4.js.map": "/LCDAL/static/js/main.a9db3dc4.js.map",
+    "787.847d41f0.chunk.js.map": "/LCDAL/static/js/787.847d41f0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be142b0f.css",
+    "static/js/main.a9db3dc4.js"
+  ]
+}
