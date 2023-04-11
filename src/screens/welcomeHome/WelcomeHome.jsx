@@ -1,31 +1,29 @@
 import './WelcomeHome.css';
 import { Grid } from '@mui/material';
 import { useNavigate } from "react-router-dom";
-import { useFirestoreVideos } from '../../hooks/useFirestoreVideos';
 import HoverVideoPlayer from 'react-hover-video-player';
 import React, { useState } from 'react';
 import { AnimatedLogo } from '../../animations/AnimatedLogo';
 import { motion, useIsPresent } from 'framer-motion';
+import { useContext } from 'react';
+import { FirebaseContext } from '../../context/firebaseContext';
 
 export const WelcomeHome = () => {
-    const { stills } = useFirestoreVideos();
+    const { stills } = useContext(FirebaseContext);
     const [isPlayingVideo, setIsPlayingVideo] = useState(true);
     const isPresent = useIsPresent();
     const navigate = useNavigate();
 
-// TODO:
-// Logo a svg para mantener el mismo efect pero con la tipografía original
-// color blanco
-// probar fade / guardar el que está ahora también
-
     return (
         <Grid className='container' onClick={() => navigate('/works')}>
-                    <HoverVideoPlayer
-                        videoSrc={stills[1]}
-                        focused={isPlayingVideo}
-                        className='welcome-background' />
-
-            <div className='worksLinks' onMouseOver={() =>setIsPlayingVideo(true)}>
+            {
+                stills.length &&
+                <HoverVideoPlayer
+                    videoSrc={stills[1]}
+                    focused={isPlayingVideo}
+                    className='welcome-background' />
+            }
+            <div className='worksLinks' onMouseOver={() => setIsPlayingVideo(true)}>
                 <AnimatedLogo />
             </div>
             <motion.div

@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 import './Works.css'
 import { NavLink } from 'react-router-dom';
-import { useFirestoreVideos } from '../../hooks/useFirestoreVideos';
 import HoverVideoPlayer from 'react-hover-video-player';
 import { motion, useIsPresent } from "framer-motion";
 import { Menu } from '../../components/menu/Menu';
+import { useContext } from 'react';
+import { FirebaseContext } from '../../context/firebaseContext';
 
 export const Works = () => {
     const [showMusicBckg, setShowMusicBckg] = useState(false);
     const [showFilmsBckg, setShowFilmsBckg] = useState(false);
     const [showCommercialsBckg, setShowCommercialsBckg] = useState(false);
-    const { stills } = useFirestoreVideos();
+    const { stills } = useContext(FirebaseContext);
     const isPresent = useIsPresent();
 
-    // TODO: 
-    // dejar en colores la transición
     return (
         <>
             <Menu color={showMusicBckg || showFilmsBckg || showCommercialsBckg ? 'white' : 'black'} />
@@ -24,7 +23,7 @@ export const Works = () => {
                 {showCommercialsBckg && <HoverVideoPlayer videoSrc={stills[6]} focused={true} className='works-videoContainer' />}
                 <div className='dataWorksContainer'>
                         <motion.div
-                            key='music'
+                            key='works-music'
                             initial={{ x: "130%" }}
                             animate={{ x: "0%" }}
                             transition={{ duration: 0.6 }}
@@ -39,7 +38,7 @@ export const Works = () => {
                         </motion.div>
 
                         <motion.div
-                            key='films'
+                            key='works-films'
                             initial={{ x: "300%" }}
                             animate={{ x: "0%" }}
                             transition={{ duration: 0.8 }}
@@ -54,7 +53,7 @@ export const Works = () => {
                         </motion.div>
 
                         <motion.div
-                            key='films'
+                            key='works-commercials'
                             initial={{ x: "180%" }}
                             animate={{ x: "0%" }}
                             transition={{ duration: 0.8 }}

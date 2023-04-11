@@ -8,6 +8,7 @@ import { Directors } from './screens/directors/Directors';
 import { PhotographerId } from './screens/photographerId/PhotographerId';
 import { DirectorId } from './screens/directorsId/DirectorId';
 import { WorksId } from './screens/worksId/WorksId';
+import FirebaseContextProvider from './context/firebaseContext';
 
 function App() {
   const location = useLocation();
@@ -26,9 +27,11 @@ function App() {
   )
 
   return (
-    <div className="mainContainer">
-      <RoutesComp />
-    </div>
+    <FirebaseContextProvider>
+      <div className="mainContainer">
+        <RoutesComp />
+      </div>
+    </FirebaseContextProvider>
   );
 }
 

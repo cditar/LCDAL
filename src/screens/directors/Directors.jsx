@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import { Box } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import './Directors.css'
-import { useFirestoreVideos } from '../../hooks/useFirestoreVideos';
 import HoverVideoPlayer from 'react-hover-video-player';
 import { AnimatePresence, motion, useIsPresent } from "framer-motion";
 import { Menu } from "../../components/menu/Menu";
+import { useContext } from "react";
+import { FirebaseContext } from "../../context/firebaseContext";
 
 export const Directors = () => {
   const [background, setBackground] = useState();
   const [showBackground, setShowBackground] = useState(false);
-  const { stills } = useFirestoreVideos();
+  const { stills } = useContext(FirebaseContext);
   const isPresent = useIsPresent();
 
   const rightDirectors = [
@@ -87,7 +88,7 @@ export const Directors = () => {
             {leftDirectors.map((item) => (
               <AnimatePresence>
                 <motion.div
-                  key='music'
+                  key={item.id}
                   style={{ margin: 15, display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}
                   initial={{ x: "130%" }}
                   animate={{ x: "0%" }}
@@ -111,7 +112,7 @@ export const Directors = () => {
             {rightDirectors.map((item) => (
               <AnimatePresence>
                 <motion.div
-                  key='music'
+                  key={item.id}
                   style={{ margin: 15, display: 'flex', alignItems: 'center' }}
                   initial={{ x: "130%" }}
                   animate={{ x: "0%" }}

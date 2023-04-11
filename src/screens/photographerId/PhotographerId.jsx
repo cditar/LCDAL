@@ -1,24 +1,37 @@
 import React from "react";
 import './PhotographerId.css';
-import { useFirestoreImages } from "../../hooks/useFirestoreImages";
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { FirebaseContext } from "../../context/firebaseContext";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useCallback } from "react";
 
 
 export const PhotographerId = () => {
   const name = window.location.hash.replace('#/photographers/', '');
-  const { images } = useFirestoreImages(name);
-  console.log(images);
+  const { getImagesByName } = useContext(FirebaseContext);
+  const [images, setImages] = useState([]);
+
+  const gettedImages = useCallback(async() => {
+    const data = await getImagesByName(name);
+    if (data.length) {
+      setImages(data);
+    }
+  }, [name, getImagesByName]);
+
+  useEffect(() => {
+    gettedImages();
+  }, [gettedImages]);
+
   return (
     <>
       {images.length === 0 ? (
         <div
-          container
+          container={true}
           direction="column"
           width="100%"
           height="100%"
-          justifyContent="center"
-          alignContent="center"
-          alignItems="center"
         >
           <p style={{ fontFamily: "ItcGaramond", fontSize: 30 }}>
             Loading ...

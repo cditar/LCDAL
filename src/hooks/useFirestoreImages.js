@@ -5,10 +5,10 @@ import { getDocs, collection } from "firebase/firestore";
 
 export const useFirestoreImages = (name) => {
     const [images, setImages] = useState([]);
+    
     const getImagesByName = useCallback(async () => {
         let data = [];
         const querySnapshot = await getDocs(collection(projectFirestore, name));
-        console.log(querySnapshot);
         querySnapshot.forEach((doc) => {
             data.push(doc.data().url);
         });

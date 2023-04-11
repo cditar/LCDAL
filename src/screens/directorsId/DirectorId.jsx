@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import arrowBack from '../../assets/images/arrow-back.png';
 import LOADING from '../../assets/images/LOADING.png';
 import { VideoContainer } from '../../components/videoContainer/VideoContainer';
 import './DirectorId.css'
 import { useSpring, animated } from '@react-spring/web'
-import { useFirestoreVideos } from '../../hooks/useFirestoreVideos';
-import { useCallback } from 'react';
+import { FirebaseContext } from '../../context/firebaseContext';
 
 export const DirectorId = () => {
     const [showContent, setShowContent] = useState(false);
     const [separatedVideos, setSeparatedVideos] = useState([]);
     const location = useLocation();
     const { name, id } = location.state;
-    const { videos } = useFirestoreVideos(id);
+    const { getVideosByDirector } = useContext(FirebaseContext);
+    const [videos, setVideos] = useState([]);
 
     const randSplit = useCallback((min, max) => {
         if (min > videos.length || max <= min)
@@ -28,6 +28,10 @@ export const DirectorId = () => {
     }, [videos]);
 
     useEffect(() => {
+        if(!videos.length){
+            const gettedVideos = getVideosByDirector(id);
+            setVideos(gettedVideos);
+        }
         if (videos.length && !separatedVideos.length) {
             if (videos.length < 3) {
                 let finalVideosArray = [];
@@ -38,7 +42,7 @@ export const DirectorId = () => {
             }
         }
         setTimeout(() => setShowContent(true), 2000);
-    }, [randSplit, separatedVideos, videos]);
+    }, [videos.length, name, getVideosByDirector]);
 
     const animation = useSpring({
         loop: true,

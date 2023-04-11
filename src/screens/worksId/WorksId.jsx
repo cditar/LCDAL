@@ -1,18 +1,19 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useContext } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import arrowBack from '../../assets/images/arrow-back.png';
 import LOADING from '../../assets/images/LOADING.png';
 import { VideoContainer } from '../../components/videoContainer/VideoContainer';
-import { useWorksVideos } from '../../hooks/useWorksVideos';
 import '../directors/Directors.css'
+import { FirebaseContext } from '../../context/firebaseContext';
 
 export const WorksId = () => {
     const location = useLocation();
     const { name } = location.state;
     const [showContent, setShowContent] = useState(false);
     const [separatedVideos, setSeparatedVideos] = useState([]);
-    const { videos } = useWorksVideos(name);
-    
+    const [videos, setVideos] = useState([]);
+    const { getVideosByCategory } = useContext(FirebaseContext);
+
     const randSplit = useCallback((min, max) => {
         if (min > videos.length || max <= min)
             return [videos];
@@ -23,14 +24,18 @@ export const WorksId = () => {
             i += rnd;
         }
         setSeparatedVideos(res);
-    }, [videos, separatedVideos]);
+    }, [videos]);
 
     useEffect(() => {
+        if(!videos.length){
+            const gettedVideos = getVideosByCategory(name);
+            setVideos(gettedVideos);
+        }
         if (videos.length && !separatedVideos.length) {
             randSplit(2, 4);
         }
         setTimeout(() => setShowContent(true), 2000);
-    }, [randSplit, separatedVideos, videos]);
+    }, [videos.length, name, getVideosByCategory]);
 
     return (
         <div>
@@ -45,9 +50,8 @@ export const WorksId = () => {
                             separatedVideos.map((item) =>
                                 <div className='rowContainer'>
                                     {
-                                        item.map((video) =>
-                                        {
-                                            return <VideoContainer key={video.name} title={video.name} name={name} src={video.url} image={video.image} imageAlt={video.name}/>
+                                        item.map((video) => {
+                                            return <VideoContainer key={video.name} title={video.name} name={name} src={video.url} image={video.image} imageAlt={video.name} />
                                         }
                                         )
                                     }

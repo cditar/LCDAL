@@ -12,9 +12,6 @@ export const Photographers = () => {
     const [showFilmsBckg, setShowFilmsBckg] = useState(false);
     const [showCommercialsBckg, setShowCommercialsBckg] = useState(false);
     const isPresent = useIsPresent();
-
-    // Animación de transicion igual que works
-    // TODO: Agregar la imágen en el pausedOverlay
     return (
         <>
             <Menu color={showMusicBckg || showFilmsBckg || showCommercialsBckg ? 'white' : 'black'} />
@@ -34,7 +31,7 @@ export const Photographers = () => {
 
                     <div className='dataWorksContainer'>
                         <motion.div
-                            key='music'
+                            key='id-ana'
                             initial={{ x: "130%" }}
                             animate={{ x: "0%" }}
                             transition={{ duration: 0.6 }}
@@ -43,7 +40,7 @@ export const Photographers = () => {
                         </motion.div>
 
                         <motion.div
-                            key='films'
+                            key='id-malu'
                             initial={{ x: "100%" }}
                             animate={{ x: "0%" }}
                             transition={{ duration: 0.8 }}
@@ -52,7 +49,7 @@ export const Photographers = () => {
                         </motion.div>
 
                         <motion.div
-                            key='films'
+                            key='id-lola'
                             initial={{ x: "180%" }}
                             animate={{ x: "0%" }}
                             transition={{ duration: 1 }}
