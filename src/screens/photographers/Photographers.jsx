@@ -36,7 +36,7 @@ export const Photographers = () => {
                             animate={{ x: "0%" }}
                             transition={{ duration: 0.6 }}
                         >
-                            <NavLink to={`/photographers/lola`} className='worksName' onMouseLeave={() => setShowMusicBckg(false)} onMouseOver={() => setShowMusicBckg(true)}> ANA PIÑERO </NavLink>
+                            <NavLink to={`/photographers/lola`} className='worksName' onMouseLeave={() => setShowMusicBckg(false)} state={{ name:'ANA PIÑERO' }} onMouseOver={() => setShowMusicBckg(true)}> ANA PIÑERO </NavLink>
                         </motion.div>
 
                         <motion.div
@@ -45,7 +45,7 @@ export const Photographers = () => {
                             animate={{ x: "0%" }}
                             transition={{ duration: 0.8 }}
                         >
-                            <NavLink to={`/photographers/malu`} className='worksName' onMouseLeave={() => setShowFilmsBckg(false)} onMouseOver={() => setShowFilmsBckg(true)}> MALU BORUCHOWICZ </NavLink>
+                            <NavLink to={`/photographers/malu`} state={{ name:'MALU BORUCHOWICZ' }} className='worksName' onMouseLeave={() => setShowFilmsBckg(false)} onMouseOver={() => setShowFilmsBckg(true)}> MALU BORUCHOWICZ </NavLink>
                         </motion.div>
 
                         <motion.div
@@ -54,7 +54,7 @@ export const Photographers = () => {
                             animate={{ x: "0%" }}
                             transition={{ duration: 1 }}
                         >
-                            <NavLink to={`/photographers/lola`} className='worksName' onMouseLeave={() => setShowCommercialsBckg(false)} onMouseOver={() => setShowCommercialsBckg(true)}> LOLA PIÑERO </NavLink>
+                            <NavLink to={`/photographers/lola`} className='worksName' onMouseLeave={() => setShowCommercialsBckg(false)} state={{ name:'LOLA PIÑERO' }} onMouseOver={() => setShowCommercialsBckg(true)}> LOLA PIÑERO </NavLink>
                         </motion.div>
                     </div>
                 </motion.div>

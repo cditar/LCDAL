@@ -58,7 +58,7 @@ export default function FirebaseContextProvider({ children }) {
             if (isTheDirector.length) {
                 data.push(video);
             }
-            console.log("DATA: ", data);
+            console.log("DATITAAAA: ", data);
         });
         return data;
     };

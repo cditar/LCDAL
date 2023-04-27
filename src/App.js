@@ -9,6 +9,7 @@ import { PhotographerId } from './screens/photographerId/PhotographerId';
 import { DirectorId } from './screens/directorsId/DirectorId';
 import { WorksId } from './screens/worksId/WorksId';
 import FirebaseContextProvider from './context/firebaseContext';
+import { VideoId } from './screens/videoId/VideoId';
 
 function App() {
   const location = useLocation();
@@ -23,6 +24,7 @@ function App() {
       <Route path="/photographers/:id" element={<PhotographerId />} />
       <Route path="/directors/:id" element={<DirectorId />} />
       <Route path="/works/:id" element={<WorksId />} />
+      <Route path="/video/:id/:name" element={<VideoId />} />
     </Routes>
   )
 

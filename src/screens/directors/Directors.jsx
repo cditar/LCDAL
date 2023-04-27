@@ -16,7 +16,7 @@ export const Directors = () => {
 
   const rightDirectors = [
     {
-      name: "Anita Piñero",
+      name: "Ana Piñero",
       id: "ana-piñero",
       video: stills[1]
     },

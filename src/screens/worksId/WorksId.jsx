@@ -51,7 +51,7 @@ export const WorksId = () => {
                                 <div className='rowContainer'>
                                     {
                                         item.map((video) => {
-                                            return <VideoContainer key={video.name} title={video.name} name={name} src={video.url} image={video.image} imageAlt={video.name} />
+                                            return <VideoContainer backTo={location.pathname} key={video.name} directors={video.director} id={name} title={video.name} name={name} src={video.url} image={video.image} imageAlt={name} />
                                         }
                                         )
                                     }

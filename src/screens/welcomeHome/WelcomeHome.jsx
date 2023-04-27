@@ -3,10 +3,10 @@ import { Grid } from '@mui/material';
 import { useNavigate } from "react-router-dom";
 import HoverVideoPlayer from 'react-hover-video-player';
 import React, { useState } from 'react';
-import { AnimatedLogo } from '../../animations/AnimatedLogo';
 import { motion, useIsPresent } from 'framer-motion';
 import { useContext } from 'react';
 import { FirebaseContext } from '../../context/firebaseContext';
+import WHITE_LOGO_COMPLETE from '../../assets/images/WHITE_LOGO_COMPLETE.png'
 
 export const WelcomeHome = () => {
     const { stills } = useContext(FirebaseContext);
@@ -21,10 +21,18 @@ export const WelcomeHome = () => {
                 <HoverVideoPlayer
                     videoSrc={stills[1]}
                     focused={isPlayingVideo}
-                    className='welcome-background' />
+                    className='welcome-background'
+                    key='welcomeVideo'
+                    hoverOverlayWrapperClassName='overlayWrapper'
+                    hoverOverlay={
+                        <img src={WHITE_LOGO_COMPLETE} alt='whiteLogoAlt' style={{ width: 400, heigth: 400, cursor: 'pointer'}} className='videoImage' />
+                    }
+                    style={{ display: '-webkit-box', backgroundColor: 'black', objectFit: 'cover', marginLeft: -1, height: '100%', width: '100%' }}
+                />
             }
             <div className='worksLinks' onMouseOver={() => setIsPlayingVideo(true)}>
-                <AnimatedLogo />
+                {/* <AnimatedLogo /> */}
+                {/* <img alt="welcomeLogo" src={WHITE_LOGO} /> */}
             </div>
             <motion.div
                 initial={{ scaleX: 1 }}

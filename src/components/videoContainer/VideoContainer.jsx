@@ -1,11 +1,13 @@
 import React from 'react';
 import HoverVideoPlayer from 'react-hover-video-player';
 import './videoContainer.css'
+import { useNavigate } from 'react-router-dom';
 
-export const VideoContainer = ({ src, name, artist, title, image, imageAlt }) => {
+export const VideoContainer = ({ id, src, name, artist, title, image, imageAlt, directors, backTo }) => {
+    const navigate = useNavigate();
 
     const openNewWindow = () => {
-        window.open(src, 'popUpWindow');
+        navigate(`/video/${id}/${title}`, { state: { id, src, artist, title, image, name, directors, backTo } });
     }
 
     return (
@@ -16,7 +18,10 @@ export const VideoContainer = ({ src, name, artist, title, image, imageAlt }) =>
             onClick={() => openNewWindow()}
             pausedOverlayWrapperClassName='videoInfoContainer'
             pausedOverlay={
+                <div className='pausedOverlayContainer'>
+                    <div className='videoTitle'>{title}</div>
                     <img src={image} alt={imageAlt} className='videoImage' />
+                </div>
             }
         />
     )

@@ -5,7 +5,7 @@ import  COMMERCIALS  from '../../assets/images/works-commercials2.jpg';
 export const photographersData = [
     {
         id: 'ana-piñero',
-        name: 'Anita Piñero',
+        name: 'Ana Piñero',
         image: MUSIC_VIDEOS,
     },
     {

@@ -1,6 +1,6 @@
 import React from "react";
 import './PhotographerId.css';
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { FirebaseContext } from "../../context/firebaseContext";
 import { useEffect } from "react";
@@ -9,11 +9,12 @@ import { useCallback } from "react";
 
 
 export const PhotographerId = () => {
+  const location = useLocation();
   const name = window.location.hash.replace('#/photographers/', '');
   const { getImagesByName } = useContext(FirebaseContext);
   const [images, setImages] = useState([]);
 
-  const gettedImages = useCallback(async() => {
+  const gettedImages = useCallback(async () => {
     const data = await getImagesByName(name);
     if (data.length) {
       setImages(data);
@@ -23,6 +24,20 @@ export const PhotographerId = () => {
   useEffect(() => {
     gettedImages();
   }, [gettedImages]);
+
+
+  useEffect(() => {
+    if (images.length) {
+      const element = document.querySelector("#horizontal");
+      element.addEventListener('wheel', (event) => {
+        event.preventDefault();
+        element.scrollBy({
+          left: event.deltaY < 0 ? -50 : 50,
+
+        });
+      });
+    }
+  }, [images]);
 
   return (
     <>
@@ -51,7 +66,7 @@ export const PhotographerId = () => {
       )}
       <div className="stickyDownbar">
         <NavLink to='/photographers' className='go-back-button'> go back </NavLink>
-        <div className="photographer-id-name">Lola Piñero</div>
+        <div className="photographer-id-name">{location.state.name}</div>
       </div>
     </>
   );

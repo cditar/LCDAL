@@ -11,8 +11,8 @@ export const DirectorId = () => {
     const [showContent, setShowContent] = useState(false);
     const [separatedVideos, setSeparatedVideos] = useState([]);
     const location = useLocation();
-    console.log(separatedVideos);
     const { name, id } = location.state;
+    console.log(separatedVideos);
     const { getVideosByDirector } = useContext(FirebaseContext);
     const [videos, setVideos] = useState([]);
 
@@ -59,7 +59,7 @@ export const DirectorId = () => {
                                 <div className='rowContainer'>
                                     {
                                         item.map((video) =>
-                                            <VideoContainer key={video.name} title={video.name} name={name} src={video.url} image={video.image} imageAlt={name} />
+                                            <VideoContainer backTo={location.pathname} key={video.name} directors={video.director} id={id} title={video.name} name={name} src={video.url} image={video.image} imageAlt={name} />
                                         )
                                     }
                                 </div>))
@@ -69,7 +69,7 @@ export const DirectorId = () => {
             <div className="stickyDownbarDirectorId">
                 <Link to='/directors' className='go-back-directors-button'>
                     <img src={arrowBack} width={20} height={20} alt="arrowBackButton" />
-                    <div className="go-back-text"> directors </div> </Link>
+                    <div className="go-back-text"> directorxs </div> </Link>
                 <div className="director-id-name"> {name} </div>
             </div>
         </div>
