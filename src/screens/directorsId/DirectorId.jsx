@@ -37,7 +37,7 @@ export const DirectorId = () => {
             randSplit(2, 3);
         }
         setTimeout(() => setShowContent(true), 2000);
-    }, [videos.length, name, getVideosByDirector]);
+    }, [videos.length, name, getVideosByDirector, randSplit, id, separatedVideos]);
 
     const animation = useSpring({
         loop: true,

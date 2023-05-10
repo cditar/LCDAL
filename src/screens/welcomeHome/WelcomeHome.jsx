@@ -25,21 +25,19 @@ export const WelcomeHome = () => {
                     key='welcomeVideo'
                     hoverOverlayWrapperClassName='overlayWrapper'
                     hoverOverlay={
-                        <img src={WHITE_LOGO_COMPLETE} alt='whiteLogoAlt' style={{ width: 400, heigth: 400, cursor: 'pointer'}} className='videoImage' />
+                        <img src={WHITE_LOGO_COMPLETE} alt='whiteLogoAlt' style={{ width: '20%', heigth: '40%', cursor: 'pointer'}} />
                     }
                     style={{ display: '-webkit-box', backgroundColor: 'black', objectFit: 'cover', marginLeft: -1, height: '100%', width: '100%' }}
                 />
             }
             <div className='worksLinks' onMouseOver={() => setIsPlayingVideo(true)}>
-                {/* <AnimatedLogo /> */}
-                {/* <img alt="welcomeLogo" src={WHITE_LOGO} /> */}
             </div>
             <motion.div
                 initial={{ scaleX: 1 }}
                 animate={{ scaleX: 0, transition: { duration: 0.5, ease: "circOut" } }}
                 exit={{ scaleX: 1, transition: { duration: 0.5, ease: "circIn" } }}
                 style={{ originX: isPresent ? 0 : 1 }}
-                className="privacy-screen"
+                className="welcome-screen"
             />
         </Grid>
     )
