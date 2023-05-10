@@ -48,7 +48,6 @@ export default function FirebaseContextProvider({ children }) {
     };
 
     const getVideosByDirector = (director) => {
-        console.log("director: ", director);
         const data = [];
         // eslint-disable-next-line array-callback-return
         videos.filter((video) => {
@@ -58,7 +57,6 @@ export default function FirebaseContextProvider({ children }) {
             if (isTheDirector.length) {
                 data.push(video);
             }
-            console.log("DATITAAAA: ", data);
         });
         return data;
     };

@@ -1,7 +1,7 @@
 {
   "name": "lcdal",
   "version": "0.1.0",
-  "homepage": "https://cditar.github.io/LCDAL/",
+  "homepage": "https://lacasadeallado.com.ar/",
   "private": false,
   "dependencies": {
     "@emotion/react": "^11.10.5",

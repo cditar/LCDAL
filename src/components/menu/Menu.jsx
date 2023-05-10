@@ -5,7 +5,6 @@ import { NavLink, useLocation } from 'react-router-dom';
 
 export const Menu = ({ color }) => {
     const location = useLocation();
-    console.log("location: ", location);
 
     const styles = {
         menuItem: {

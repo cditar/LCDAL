@@ -8,7 +8,6 @@ import { motion, useIsPresent } from "framer-motion";
 export const VideoId = () => {
   const isPresent = useIsPresent();
     const location = useLocation();
-    console.log(location.state);
 
     return (
         <>

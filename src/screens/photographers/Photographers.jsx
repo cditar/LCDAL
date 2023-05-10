@@ -36,7 +36,7 @@ export const Photographers = () => {
                             animate={{ x: "0%" }}
                             transition={{ duration: 0.6 }}
                         >
-                            <NavLink to={`/photographers/lola`} className='worksName' onMouseLeave={() => setShowMusicBckg(false)} state={{ name:'ANA PIÑERO' }} onMouseOver={() => setShowMusicBckg(true)}> ANA PIÑERO </NavLink>
+                            <NavLink to={`/photographers/ana`} className='worksName' onMouseLeave={() => setShowMusicBckg(false)} state={{ name:'ANA PIÑERO' }} onMouseOver={() => setShowMusicBckg(true)}> ANA PIÑERO </NavLink>
                         </motion.div>
 
                         <motion.div

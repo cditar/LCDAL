@@ -12,7 +12,6 @@ export const DirectorId = () => {
     const [separatedVideos, setSeparatedVideos] = useState([]);
     const location = useLocation();
     const { name, id } = location.state;
-    console.log(separatedVideos);
     const { getVideosByDirector } = useContext(FirebaseContext);
     const [videos, setVideos] = useState([]);
 
