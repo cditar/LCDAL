@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/LCDAL/static/css/main.a25fbb29.css",
-    "main.js": "/LCDAL/static/js/main.de14c17e.js",
-    "static/js/787.847d41f0.chunk.js": "/LCDAL/static/js/787.847d41f0.chunk.js",
-    "static/media/WHITE_LOGO_COMPLETE.png": "/LCDAL/static/media/WHITE_LOGO_COMPLETE.72bf326f387f0e8c083f.png",
-    "static/media/works-commercials.jpg": "/LCDAL/static/media/works-commercials.dbf3534cb2cc0759f682.jpg",
-    "static/media/LOGO_BLACK.png": "/LCDAL/static/media/LOGO_BLACK.c5fe9d49cc96a4185dd4.png",
-    "static/media/works-films.jpg": "/LCDAL/static/media/works-films.7d09932af2c61f2c517c.jpg",
-    "static/media/works-musicvideos.jpg": "/LCDAL/static/media/works-musicvideos.5260d43258dd5cf8c28e.jpg",
-    "static/media/Praktika-Light.otf": "/LCDAL/static/media/Praktika-Light.cff59afb29b4ccd7ec6f.otf",
-    "static/media/LOADING.png": "/LCDAL/static/media/LOADING.4f072d02879e66932e0b.png",
-    "static/media/Raccosetta.ttf": "/LCDAL/static/media/Raccosetta.c0f29776ce9ebc1f2726.ttf",
-    "index.html": "/LCDAL/index.html",
-    "main.a25fbb29.css.map": "/LCDAL/static/css/main.a25fbb29.css.map",
-    "main.de14c17e.js.map": "/LCDAL/static/js/main.de14c17e.js.map",
-    "787.847d41f0.chunk.js.map": "/LCDAL/static/js/787.847d41f0.chunk.js.map"
+    "main.css": "/static/css/main.1bcaee6a.css",
+    "main.js": "/static/js/main.4bf30a0e.js",
+    "static/js/787.847d41f0.chunk.js": "/static/js/787.847d41f0.chunk.js",
+    "static/media/works-commercials.jpg": "/static/media/works-commercials.dbf3534cb2cc0759f682.jpg",
+    "static/media/LOGO_BLACK.png": "/static/media/LOGO_BLACK.c5fe9d49cc96a4185dd4.png",
+    "static/media/works-films.jpg": "/static/media/works-films.7d09932af2c61f2c517c.jpg",
+    "static/media/works-musicvideos.jpg": "/static/media/works-musicvideos.5260d43258dd5cf8c28e.jpg",
+    "static/media/WHITE_LOGO_COMPLETE.png": "/static/media/WHITE_LOGO_COMPLETE.66188c7d8e902d41ee3b.png",
+    "static/media/Praktika-Light.otf": "/static/media/Praktika-Light.cff59afb29b4ccd7ec6f.otf",
+    "static/media/LOADING.png": "/static/media/LOADING.4f072d02879e66932e0b.png",
+    "static/media/Raccosetta.ttf": "/static/media/Raccosetta.c0f29776ce9ebc1f2726.ttf",
+    "static/media/closeIcon.svg": "/static/media/closeIcon.2043fdf5c849376e5a537523972df1e7.svg",
+    "static/media/hambur.svg": "/static/media/hambur.339615112f1b40411de566ba9b9858ea.svg",
+    "index.html": "/index.html",
+    "main.1bcaee6a.css.map": "/static/css/main.1bcaee6a.css.map",
+    "main.4bf30a0e.js.map": "/static/js/main.4bf30a0e.js.map",
+    "787.847d41f0.chunk.js.map": "/static/js/787.847d41f0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a25fbb29.css",
-    "static/js/main.de14c17e.js"
+    "static/css/main.1bcaee6a.css",
+    "static/js/main.4bf30a0e.js"
   ]
 }
