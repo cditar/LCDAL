@@ -46,3 +46,24 @@
     background-color: black;
     z-index: 2;
   }
+
+  @media (max-width: 720px) {
+    .contactContainer {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Praktika-Light';
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .leftContainer {
+        text-align: center;
+    }
+    
+    .rightContainer {
+        text-align: center;
+    }
+  }

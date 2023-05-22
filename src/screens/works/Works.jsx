@@ -4,11 +4,14 @@ import './Works.css'
 import { NavLink } from 'react-router-dom';
 import HoverVideoPlayer from 'react-hover-video-player';
 import { motion, useIsPresent } from "framer-motion";
-import { Menu } from '../../components/menu/Menu';
+import { Menu } from "../../components/menu/desktop/Menu";
 import { useContext } from 'react';
 import { FirebaseContext } from '../../context/firebaseContext';
+import { useMediaQuery } from '@mui/material';
+import { MenuMobile } from '../../components/menu/mobile/MenuMobile';
 
 export const Works = () => {
+    const matches = useMediaQuery('(max-width:720px)');
     const [showMusicBckg, setShowMusicBckg] = useState(false);
     const [showFilmsBckg, setShowFilmsBckg] = useState(false);
     const [showCommercialsBckg, setShowCommercialsBckg] = useState(false);
@@ -17,7 +20,7 @@ export const Works = () => {
 
     return (
         <>
-            <Menu color={showMusicBckg || showFilmsBckg || showCommercialsBckg ? 'white' : 'black'} />
+            { matches ? <MenuMobile/> : <Menu color={showMusicBckg || showFilmsBckg || showCommercialsBckg ? 'white' : 'black'} />}
             <div className='worksContainer'               >
                 {showMusicBckg && <HoverVideoPlayer videoSrc={stills[4]} focused={true} className='works-videoContainer' />}
                 {showFilmsBckg && <HoverVideoPlayer videoSrc={stills[0]} focused={true} className='works-videoContainer' />}

@@ -78,3 +78,13 @@
     background-color: black;
     z-index: 2;
   }
+
+  @media (max-width: 720px) {
+    .dataWorksContainer {
+        margin-left: 50px;
+    }
+
+    .worksName {
+        font-size: 45px;
+    }
+  }

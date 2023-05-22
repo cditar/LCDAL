@@ -1,0 +1,44 @@
+.menuMobileContainer {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mobileMenuLogo {
+    margin-left: 60px;
+}
+
+.drawerContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.buttonClose {
+    margin-bottom: 40px;
+}
+
+.mobileMenuItem {
+    margin-top: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: black;
+    text-decoration: none;
+    font-family: 'Raccosetta';
+    letter-spacing: 1px;
+    font-size: 35px;
+}
+
+.drawerList {
+    margin-left: 40px;
+    margin-top: 90px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}

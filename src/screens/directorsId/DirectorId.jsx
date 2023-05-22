@@ -6,6 +6,7 @@ import { VideoContainer } from '../../components/videoContainer/VideoContainer';
 import './DirectorId.css'
 import { useSpring, animated } from '@react-spring/web'
 import { FirebaseContext } from '../../context/firebaseContext';
+import { useMediaQuery } from '@material-ui/core';
 
 export const DirectorId = () => {
     const [showContent, setShowContent] = useState(false);
@@ -14,6 +15,7 @@ export const DirectorId = () => {
     const { name, id } = location.state;
     const { getVideosByDirector } = useContext(FirebaseContext);
     const [videos, setVideos] = useState([]);
+    const matches = useMediaQuery('(max-width:720px)');
 
     const randSplit = useCallback((min, max) => {
         if (min > videos.length || max <= min)
@@ -33,10 +35,10 @@ export const DirectorId = () => {
             setVideos(gettedVideos);
         }
         if (videos.length && !separatedVideos.length) {
-            randSplit(2, 3);
+            matches ? randSplit(1, 2) : randSplit(2, 3);
         }
         setTimeout(() => setShowContent(true), 2000);
-    }, [videos.length, name, getVideosByDirector, randSplit, id, separatedVideos]);
+    }, [videos.length, name, getVideosByDirector, randSplit, id, separatedVideos, matches]);
 
     const animation = useSpring({
         loop: true,

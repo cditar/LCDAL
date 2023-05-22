@@ -9,8 +9,8 @@ export const whiteMenu = [
         to: '/works',
     },
     {
-        id: 'directores',
-        name: 'Directorxs',
+        id: 'directors',
+        name: 'Directors',
         image: '',
         to: '/directors'
     },
@@ -20,14 +20,14 @@ export const whiteMenu = [
         image: LOGO_MENU_WHITE,
     },
     {
-        id: 'fotografxs',
-        name: 'Fotografxs',
+        id: 'photographers',
+        name: 'Photographers',
         image: '',
         to: '/photographers'
     },
     {
-        id: 'contacto',
-        name: 'Contacto',
+        id: 'contact',
+        name: 'Contact',
         image: '',
         to: '/contact'
     }
@@ -41,8 +41,8 @@ export const blackMenu = [
         to: '/works',
     },
     {
-        id: 'directores',
-        name: 'Directorxs',
+        id: 'directors',
+        name: 'Directors',
         to: '/directors'
     },
     {
@@ -51,14 +51,14 @@ export const blackMenu = [
         image: LOGO_MENU_BLACK,
     },
     {
-        id: 'fotografxs',
-        name: 'Fotografxs',
+        id: 'photographers',
+        name: 'Photographers',
         image: '',
         to: '/photographers'
     },
     {
-        id: 'contacto',
-        name: 'Contacto',
+        id: 'contact',
+        name: 'Contact',
         image: '',
         to: '/contact'
     }

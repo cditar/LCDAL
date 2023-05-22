@@ -5,6 +5,7 @@ import LOADING from '../../assets/images/LOADING.png';
 import { VideoContainer } from '../../components/videoContainer/VideoContainer';
 import '../directors/Directors.css'
 import { FirebaseContext } from '../../context/firebaseContext';
+import { useMediaQuery } from '@material-ui/core';
 
 export const WorksId = () => {
     const location = useLocation();
@@ -13,6 +14,7 @@ export const WorksId = () => {
     const [separatedVideos, setSeparatedVideos] = useState([]);
     const [videos, setVideos] = useState([]);
     const { getVideosByCategory } = useContext(FirebaseContext);
+    const matches = useMediaQuery('(max-width:720px)');
 
     const randSplit = useCallback((min, max) => {
         if (min > videos.length || max <= min)
@@ -27,15 +29,16 @@ export const WorksId = () => {
     }, [videos]);
 
     useEffect(() => {
-        if(!videos.length){
+        if (!videos.length) {
             const gettedVideos = getVideosByCategory(name);
             setVideos(gettedVideos);
         }
         if (videos.length && !separatedVideos.length) {
-            randSplit(2, 4);
+            matches ? randSplit(1, 2) : randSplit(2, 4);
         }
         setTimeout(() => setShowContent(true), 2000);
-    }, [videos.length, name, getVideosByCategory]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [videos.length, name, getVideosByCategory, matches]);
 
     return (
         <div>

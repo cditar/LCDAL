@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './VideoId.css'
 import arrowBack from '../../assets/images/arrow-back.png';
-import { Menu } from '../../components/menu/Menu';
+import { Menu } from "../../components/menu/desktop/Menu";
 import { motion, useIsPresent } from "framer-motion";
 
 export const VideoId = () => {

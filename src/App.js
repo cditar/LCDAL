@@ -30,9 +30,7 @@ function App() {
 
   return (
     <FirebaseContextProvider>
-      <div className="mainContainer">
         <RoutesComp />
-      </div>
     </FirebaseContextProvider>
   );
 }

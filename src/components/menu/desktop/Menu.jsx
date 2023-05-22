@@ -1,6 +1,6 @@
 import React from 'react';
 import './Menu.css'
-import { blackMenu, whiteMenu } from '../../screens/const/Menu';
+import { blackMenu, whiteMenu } from '../../../screens/const/Menu';
 import { NavLink, useLocation } from 'react-router-dom';
 
 export const Menu = ({ color }) => {

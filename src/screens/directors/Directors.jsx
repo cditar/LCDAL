@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import { Box } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import './Directors.css'
 import HoverVideoPlayer from 'react-hover-video-player';
 import { AnimatePresence, motion, useIsPresent } from "framer-motion";
-import { Menu } from "../../components/menu/Menu";
+import { Menu } from "../../components/menu/desktop/Menu";
 import { useContext } from "react";
 import { FirebaseContext } from "../../context/firebaseContext";
+import { MenuMobile } from "../../components/menu/mobile/MenuMobile";
 
 export const Directors = () => {
+  const matches = useMediaQuery('(max-width:720px)');
   const [background, setBackground] = useState();
   const [showBackground, setShowBackground] = useState(false);
   const { stills } = useContext(FirebaseContext);
@@ -67,7 +69,7 @@ export const Directors = () => {
 
   return (
     <>
-      <Menu color={showBackground ? 'white' : 'black'} />
+      {matches ? <MenuMobile /> : <Menu color={showBackground ? 'white' : 'black'} />}
       <AnimatePresence>
         <motion.div
           className='directorsRowContainer'
@@ -135,11 +137,11 @@ export const Directors = () => {
         </motion.div >
       </AnimatePresence >
       <motion.div
-                initial={{ scaleX: 2 }}
-                animate={{ scaleX: 0, transition: { duration: 1, ease: "circOut" } }}
-                style={{ originX: isPresent ? 0 : 2 }}
-                className="directorsTransition"
-            />
+        initial={{ scaleX: 2 }}
+        animate={{ scaleX: 0, transition: { duration: 1, ease: "circOut" } }}
+        style={{ originX: isPresent ? 0 : 2 }}
+        className="directorsTransition"
+      />
     </>
   );
 };
