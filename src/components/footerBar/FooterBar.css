@@ -1,0 +1,65 @@
+.stickyDownbar {
+  position: sticky;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 7vh;
+  justify-content: space-between;
+  background-color: white;
+  bottom: 0;
+  z-index: 89999;
+  align-items: center;
+}
+
+.go-back-button {
+  text-decoration: none;
+  font-size: 16px;
+  height: 7vh;
+  text-align: left;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sticky-downbar-name {
+  font-size: 20px;
+  text-align: right;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+@media (max-width: 720px) {
+  .stickyDownbar {
+    position: sticky;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    text-align: right;
+    height: 7vh;
+    justify-content: space-between;
+    bottom: 0;
+    align-items: center;
+    z-index: 999;
+    background-color: white;
+  }
+
+  .go-back-button {
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sticky-downbar-name {
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: right;
+    margin-right: 10px;
+  }
+}

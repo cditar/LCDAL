@@ -32,14 +32,14 @@ export const Menu = ({ color }) => {
                 color === 'white' ?
                     whiteMenu.map((item) => {
                         if (item.id === 'logo') {
-                            return (<img alt='item.id' src={item.image} width={100} key={item.id} />);
+                            return (<img alt='item.id' style={{ cursor: 'pointer'}} src={item.image} width={100} key={item.id} onClick={() => window.location.replace("https://lacasadeallado.com.ar/")} />);
                         }
                         return (<NavLink key={item.id} style={location.pathname === item.to ? styles.menuItemSelected : styles.menuItem} to={item.to}> {item.name} </NavLink>)
                     })
                     :
                     blackMenu.map((item) => {
                         if (item.id === 'logo') {
-                            return (<img alt='item.id' src={item.image} width={100} key={item.id} />);
+                            return (<img alt='item.id' style={{ cursor: 'pointer'}} src={item.image} width={100} key={item.id} onClick={() => window.location.replace("https://lacasadeallado.com.ar/")} />);
                         }
                         return (<NavLink key={item.id} style={location.pathname === item.to ? styles.menuItemSelected : styles.menuItem} to={item.to}> {item.name} </NavLink>)
                     })

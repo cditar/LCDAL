@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState, useCallback } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import arrowBack from '../../assets/images/arrow-back.png';
+import { useLocation } from 'react-router-dom';
 import LOADING from '../../assets/images/LOADING.png';
 import { VideoContainer } from '../../components/videoContainer/VideoContainer';
 import './DirectorId.css'
 import { useSpring, animated } from '@react-spring/web'
 import { FirebaseContext } from '../../context/firebaseContext';
 import { useMediaQuery } from '@material-ui/core';
+import { FooterBar } from '../../components/footerBar/FooterBar';
 
 export const DirectorId = () => {
     const [showContent, setShowContent] = useState(false);
@@ -67,12 +67,7 @@ export const DirectorId = () => {
                         }
                     </div>
             }
-            <div className="stickyDownbarDirectorId">
-                <Link to='/directors' className='go-back-directors-button'>
-                    <img src={arrowBack} width={20} height={20} alt="arrowBackButton" />
-                    <div className="go-back-text"> directorxs </div> </Link>
-                <div className="director-id-name"> {name} </div>
-            </div>
+            <FooterBar goBackText='directors' name={name} path='/directors'/>
         </div>
     )
 }

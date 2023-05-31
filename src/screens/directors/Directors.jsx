@@ -80,60 +80,111 @@ export const Directors = () => {
             duration: 0.5,
           }}
         >
-          {showBackground &&
-            <HoverVideoPlayer
-              videoSrc={background}
-              focused={true}
-            />
+          {matches ?
+            <Box className="columnMobile">
+              {leftDirectors.map((item) => (
+                <AnimatePresence>
+                  <motion.div
+                    key={item.id}
+                    style={{ margin: 15, display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}
+                    initial={{ x: "130%" }}
+                    animate={{ x: "0%" }}
+                    exit={{ x: '-100%', opacity: 0, backgroundColor: 'red' }}
+                    transition={{ duration: Math.random(0.2, 1.2) }}
+                    onMouseOver={() => showBackgroundAndName(item)}
+                    onMouseLeave={() => setShowBackground(false)}
+                  >
+                    <NavLink
+                      to={`/directors/${item.id}`}
+                      state={{ name: item.name, id: item.id }}
+                      className="directorsName"
+                    >
+                      {item.name}
+                    </NavLink>
+                  </motion.div>
+                </AnimatePresence>
+              ))}
+              {rightDirectors.map((item) => (
+                <AnimatePresence>
+                  <motion.div
+                    key={item.id}
+                    style={{ margin: 15, display: 'flex', alignItems: 'center' }}
+                    initial={{ x: "130%" }}
+                    animate={{ x: "0%" }}
+                    exit={{ x: '-100%', opacity: 0, backgroundColor: 'red' }}
+                    transition={{ duration: Math.random(0.2, 1.2) }}
+                    onMouseOver={() => showBackgroundAndName(item)}
+                    onMouseLeave={() => setShowBackground(false)}
+                  >
+                    <NavLink
+                      to={`/directors/${item.id}`}
+                      state={{ name: item.name, id: item.id }}
+                      className="directorsName"
+                    >
+                      {item.name}
+                    </NavLink>
+                  </motion.div>
+                </AnimatePresence>
+              ))}
+            </Box>
+            :
+            <>
+              {showBackground &&
+                <HoverVideoPlayer
+                  videoSrc={background}
+                  focused={true}
+                />
+              }
+              <Box className="columnLeftContainer">
+                {leftDirectors.map((item) => (
+                  <AnimatePresence>
+                    <motion.div
+                      key={item.id}
+                      style={{ margin: 15, display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}
+                      initial={{ x: "130%" }}
+                      animate={{ x: "0%" }}
+                      exit={{ x: '-100%', opacity: 0, backgroundColor: 'red' }}
+                      transition={{ duration: Math.random(0.2, 1.2) }}
+                      onMouseOver={() => showBackgroundAndName(item)}
+                      onMouseLeave={() => setShowBackground(false)}
+                    >
+                      <NavLink
+                        to={`/directors/${item.id}`}
+                        state={{ name: item.name, id: item.id }}
+                        className="directorsName"
+                      >
+                        {item.name}
+                      </NavLink>
+                    </motion.div>
+                  </AnimatePresence>
+                ))}
+              </Box>
+              <Box className="columnRightContainer">
+                {rightDirectors.map((item) => (
+                  <AnimatePresence>
+                    <motion.div
+                      key={item.id}
+                      style={{ margin: 15, display: 'flex', alignItems: 'center' }}
+                      initial={{ x: "130%" }}
+                      animate={{ x: "0%" }}
+                      exit={{ x: '-100%', opacity: 0, backgroundColor: 'red' }}
+                      transition={{ duration: Math.random(0.2, 1.2) }}
+                      onMouseOver={() => showBackgroundAndName(item)}
+                      onMouseLeave={() => setShowBackground(false)}
+                    >
+                      <NavLink
+                        to={`/directors/${item.id}`}
+                        state={{ name: item.name, id: item.id }}
+                        className="directorsName"
+                      >
+                        {item.name}
+                      </NavLink>
+                    </motion.div>
+                  </AnimatePresence>
+                ))}
+              </Box>
+            </>
           }
-          <Box className="columnLeftContainer">
-            {leftDirectors.map((item) => (
-              <AnimatePresence>
-                <motion.div
-                  key={item.id}
-                  style={{ margin: 15, display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}
-                  initial={{ x: "130%" }}
-                  animate={{ x: "0%" }}
-                  exit={{ x: '-100%', opacity: 0, backgroundColor: 'red' }}
-                  transition={{ duration: Math.random(0.2, 1.2) }}
-                  onMouseOver={() => showBackgroundAndName(item)}
-                  onMouseLeave={() => setShowBackground(false)}
-                >
-                  <NavLink
-                    to={`/directors/${item.id}`}
-                    state={{ name: item.name, id: item.id }}
-                    className="directorsName"
-                  >
-                    {item.name}
-                  </NavLink>
-                </motion.div>
-              </AnimatePresence>
-            ))}
-          </Box>
-          <Box className="columnRightContainer">
-            {rightDirectors.map((item) => (
-              <AnimatePresence>
-                <motion.div
-                  key={item.id}
-                  style={{ margin: 15, display: 'flex', alignItems: 'center' }}
-                  initial={{ x: "130%" }}
-                  animate={{ x: "0%" }}
-                  exit={{ x: '-100%', opacity: 0, backgroundColor: 'red' }}
-                  transition={{ duration: Math.random(0.2, 1.2) }}
-                  onMouseOver={() => showBackgroundAndName(item)}
-                  onMouseLeave={() => setShowBackground(false)}
-                >
-                  <NavLink
-                    to={`/directors/${item.id}`}
-                    state={{ name: item.name, id: item.id }}
-                    className="directorsName"
-                  >
-                    {item.name}
-                  </NavLink>
-                </motion.div>
-              </AnimatePresence>
-            ))}
-          </Box>
         </motion.div >
       </AnimatePresence >
       <motion.div

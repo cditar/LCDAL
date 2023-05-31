@@ -1,29 +1,54 @@
 .videoInfoContainer {
-    background-color: white;
-    animation: backgroundColorA 1s;
-    display: flex;
-    flex-direction: column;
+  background-color: white;
+  animation: backgroundColorA 1s;
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes backgroundColorA {
-    from {
-      background-color: white;
-    }
-    to {
-      background-color: black;
-    }
+  from {
+    background-color: white;
   }
 
+  to {
+    background-color: black;
+  }
+}
+
 .videoInfoContainer:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .pausedOverlayContainer {
-    display: flex;
-    justify-content: center;}
+  display: flex;
+  justify-content: center;
+}
 
 
 .videoTitle {
+  position: absolute;
+  z-index: 2;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: white;
+  font-size: 25px;
+  font-family: 'Praktika-Light';
+  top: 140px;
+  text-align: center;
+}
+
+.videoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+@media (max-width: 720px) {
+  .videoTitle {
     position: absolute;
     z-index: 2;
     font-weight: 500;
@@ -31,16 +56,7 @@
     color: white;
     font-size: 25px;
     font-family: 'Praktika-Light';
-    top: 140px;
+    top: 90px;
     text-align: center;
-}
-
-.videoImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 1;
+  }
 }

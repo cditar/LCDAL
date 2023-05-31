@@ -77,14 +77,23 @@
     /* background-color: #2F2B5E; */
     background-color: black;
     z-index: 2;
-  }
+}
 
-  @media (max-width: 720px) {
+@media (max-width: 720px) {
+    .worksContainer {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: start;
+        background-color: transparent;
+        margin-top: 250px;
+    }
+
     .dataWorksContainer {
         margin-left: 50px;
     }
 
     .worksName {
-        font-size: 45px;
+        font-size: 40px;
     }
-  }
+}

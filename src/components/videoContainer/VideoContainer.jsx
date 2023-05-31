@@ -5,9 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 export const VideoContainer = ({ id, src, name, artist, title, image, imageAlt, directors, backTo }) => {
     const navigate = useNavigate();
-
     const openNewWindow = () => {
-        navigate(`/video/${id}/${title}`, { state: { id, src, artist, title, image, name, directors, backTo } });
+        navigate(`/video/${id}/${title}`, { state: { id, src, artist, title, image, name, directors, backTo, key: name } });
     }
 
     return (

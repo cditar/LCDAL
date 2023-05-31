@@ -15,7 +15,7 @@ export const MenuMobile = () => {
             <Button onClick={() => setIsOpen(true)}>
                 <img alt='MobileMenuHamburIcon' src={hamburIcon} width={30} key='hamburIcon' />
             </Button>
-            <img alt='mobileMenuLogo' className='mobileMenuLogo' src={blackMenu[2].image} width={150} key={blackMenu[2].id} />
+            <img alt='mobileMenuLogo' className='mobileMenuLogo' src={blackMenu[2].image} width={150} key={blackMenu[2].id} onClick={() => window.location.replace("https://lacasadeallado.com.ar/")}/>
             <Drawer
                 anchor='left'
                 open={isOpen}

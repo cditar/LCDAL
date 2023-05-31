@@ -1,6 +1,6 @@
 .generalContainer {
     width: 100vw;
-    height: 100vh;
+    height: 96vh;
     overflow: scroll;
 }
 
@@ -84,4 +84,20 @@
     width: 55%;
     font-size: 20px;
     text-transform: uppercase;
+}
+
+@media (max-width: 720px) {
+    .rowContainer {
+        width: 100vw;
+        height: 50vw;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    .director-id-name {
+        width: 100%;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
 }

@@ -6,6 +6,7 @@ import { VideoContainer } from '../../components/videoContainer/VideoContainer';
 import '../directors/Directors.css'
 import { FirebaseContext } from '../../context/firebaseContext';
 import { useMediaQuery } from '@material-ui/core';
+import { FooterBar } from '../../components/footerBar/FooterBar';
 
 export const WorksId = () => {
     const location = useLocation();
@@ -61,12 +62,7 @@ export const WorksId = () => {
                                 </div>)}
                     </div>
             }
-            <div className="stickyDownbarDirectorId">
-                <NavLink to='/works' className='go-back-directors-button'>
-                    <img src={arrowBack} width={20} height={20} alt="arrowBackButton" />
-                    <div className="go-back-text"> works </div> </NavLink>
-                <div className="director-id-name"> {name} </div>
-            </div>
+            <FooterBar goBackText='works' name={name} path='/works'/>
         </div>
     )
 }

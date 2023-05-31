@@ -64,3 +64,26 @@
     /* background-color: black; */
     z-index: 2;
 }
+
+@media (max-width: 720px) {
+    .directorsName {
+        letter-spacing: -1;
+        font-size: 30px;
+        text-decoration: none;
+        color: black;
+        text-transform: uppercase;
+        transition-duration: 0.5s;
+        font-family: 'Praktika-Light';
+        font-weight: 500;
+    }
+    .columnMobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100vw;
+        top: 21vh;
+        align-items: center;
+        text-align: center;
+        position: absolute;
+    }
+}

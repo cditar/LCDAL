@@ -1,25 +1,24 @@
-import React from "react";
+import React, { useContext, useState, useCallback, useEffect } from "react";
 import './PhotographerId.css';
-import { NavLink, useLocation } from "react-router-dom";
-import { useContext } from "react";
+import {useLocation } from "react-router-dom";
 import { FirebaseContext } from "../../context/firebaseContext";
-import { useEffect } from "react";
-import { useState } from "react";
-import { useCallback } from "react";
+import { FooterBar } from "../../components/footerBar/FooterBar";
 
 
 export const PhotographerId = () => {
-  const location = useLocation();
-  const name = window.location.hash.replace('#/photographers/', '');
+  const queryName = window.location.hash.replace('#/photographers/', '');
   const { getImagesByName } = useContext(FirebaseContext);
+  const location = useLocation();
   const [images, setImages] = useState([]);
+  const { name } = location.state;
+
 
   const gettedImages = useCallback(async () => {
-    const data = await getImagesByName(name);
+    const data = await getImagesByName(queryName);
     if (data.length) {
       setImages(data);
     }
-  }, [name, getImagesByName]);
+  }, [queryName, getImagesByName]);
 
   useEffect(() => {
     gettedImages();
@@ -64,10 +63,7 @@ export const PhotographerId = () => {
           </div>
         </>
       )}
-      <div className="stickyDownbar">
-        <NavLink to='/photographers' className='go-back-button'> go back </NavLink>
-        <div className="photographer-id-name">{location.state.name}</div>
-      </div>
+      <FooterBar goBackText='photographers' name={name} path='/photographers' />
     </>
   );
 };
